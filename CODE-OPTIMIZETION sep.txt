@@ -1,0 +1,80 @@
+
+PART:-1
+ // Code Motion or Frequency Reduction :
+
+#include<stdio.h>
+int main(){
+
+int a = 200;
+int b ,x=10,y=15;
+while(a>b)
+{
+	b = x + y;
+	if (a % b == 0)
+	printf("%d \n", a);
+	a= a % b;
+}
+
+
+//This code can be further optimized as
+ a = 200;
+b = x + y;
+while(a==200)
+{
+	if (a % b == 0)
+	printf("%d \n", a);
+     a= a % b;
+}
+}
+
+
+PART:-2
+
+
+//2. Loop Jamming :
+
+ // Before loop jamming
+#include<stdio.h>
+int main()
+{
+    int x= 10,y=20;
+for(int k=0;k<10;k++)
+{
+x = k*2;
+}
+printf("loop 1 %d \n",x);
+
+for(int k=0;k<10;k++)
+{
+y = k+3;
+}
+printf("loop 2 %d \n",y);
+
+//After loop jamming
+for(int k=0;k<10;k++)
+{
+x = k*2;
+y = k+3;
+
+}
+printf(" after loop jamming %d \n",x);
+printf(" aftre loop jamming %d \n",y);
+}
+
+//3. Loop Unrolling : 
+
+//Before Loop Unrolling
+#include<stdio.h>
+int main()
+{
+printf("Before Loop Unrolling\n");
+for(int i=0;i<2;i++)
+{
+printf("Hello \n");
+}
+
+//After Loop Unrolling
+printf("After Loop Unrolling \n");
+printf("Hello \n");
+printf("Hello \n");
+}
